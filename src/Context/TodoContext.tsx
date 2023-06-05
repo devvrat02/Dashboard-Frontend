@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { TodoContextType, ITodo } from '../components/@types/todo';
-
+// todo context
 const TodoContext = React.createContext<TodoContextType | null>(null);
 
 export function useTodo(){

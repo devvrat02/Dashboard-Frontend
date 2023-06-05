@@ -3,6 +3,7 @@ import { Star,Delete,Edit,Save,Cancel,Branch,Add } from '../../../assets';
 import {useState} from 'react'
 import { useTodo } from '../../../Context/TodoContext';
 function InputField({todo,editable}:any) {
+    // Used for Displaying elements in Todo List change Input to text viceversa
     const {addTodo, updateTodo ,deleteTodo}:any=useTodo();
 
     const defaultValues = {

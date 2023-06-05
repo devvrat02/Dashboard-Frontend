@@ -1,7 +1,7 @@
 import React,{useState,useEffect, useContext} from "react";
 import Users from './Users.json'
 const AuthContext=React.createContext(null);
-
+// auth context
 export function useAuth(){
   return useContext(AuthContext);
 }

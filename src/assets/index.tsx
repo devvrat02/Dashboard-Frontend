@@ -7,7 +7,7 @@ import {ReactComponent as Dropdown} from './dropdown.svg';
 import {ReactComponent as Dropup} from './dropup.svg';
 import {ReactComponent as Branch} from './branch.svg';
 import {ReactComponent as Add} from './add.svg';
-
+// export svg from one end
 export {
     Delete,
     Save,

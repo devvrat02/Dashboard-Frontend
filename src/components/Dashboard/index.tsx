@@ -3,6 +3,7 @@ import Login from '../Login';
 import Todo from './Todo';
 
 function Dashboard() {
+    // dashboard for authenticating and display element
     const {authUser,setAuthUser,isLoggedIn,setisLoggedIn,authentication}:any=useAuth();
     const logInUser =(e:any)=>{
         let resp=authentication(e)

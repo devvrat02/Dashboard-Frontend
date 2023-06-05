@@ -1,6 +1,6 @@
 import './App.css';
-import { AuthProvider } from './Context/AuthContext';
-import TodoProvider from './Context/TodoContext';
+import { AuthProvider } from './Context/AuthContext';//Authentication
+import TodoProvider from './Context/TodoContext';//todo
 import { Dashboard } from './components';
 
 function App() {

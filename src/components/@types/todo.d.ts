@@ -4,7 +4,7 @@ export interface ITodo {
     status: boolean;
     todo:ITodo[]
   }
-  
+  // definying todo type
   export type TodoContextType = {
     todos: ITodo[];
     addTodo: (todo: ITodo) => void;
