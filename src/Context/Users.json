@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "UserId": "Alpha",
+        "Password": "Qwertyuiop@123",   
+        "JWT":"Bearer esakjfioemsadskjnuinekaasdass"
+    },
+    {
+        "id":2,
+        "UserId": "Beta",
+        "Password": "Qwertyuiop@123",   
+        "JWT":"Bearer esakjfioemsadskjnuinekaasdasd"
+    },
+    {
+        "id":3,
+        "UserId": "Gamma",
+        "Password": "Qwertyuiop@123",   
+        "JWT":"Bearer esakjfioemsadskjnuinekaasdaaaa"
+    },
+    {
+        "id":4,
+        "UserId": "Delta",
+        "Password": "Qwertyuiop@123",   
+        "JWT":"Bearer esakasdaoemsadskjnuinekaasdasd"
+    }
+
+]
