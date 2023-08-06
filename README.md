@@ -1,46 +1,124 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Project Title:** Dashboard
+**Live Link / Demo Link:**
+[\[netlify\]]()
+## MainFile
+```markdown
+├── src
+│ ├── API
+│ | ├── server.tsx //setting backend
+```  
 
-## Available Scripts
+## File Structure
+Structure of Files.
+```markdown
+├── ProjectDemo #screenshot of project
+├── src
+│ ├── Assets //Images
+│ ├── API
+│ | ├──
+│ | ├── axios.instance.tsx//setting api header
+│ | ├── server.tsx // setting enviroment
+│ ├── Context
+│ | ├── AuthContext ...
+│ ├── Components
+│ | ├── Custom Components ...
+│ | ├── index.tsx
+│ ├── ProtectedRoute
+│ | ├── index.tsx //for making authentication necessary
+│ ├── reducers [redux/thunkapi]
+│ | ├── []Slice.tsx
+│ ├── Router
+│ | ├── index.tsx [Used for dom routing ]
+│ ├── type
+│ | ├── index.tsx [defining datatypes ]
+│ ├── utils
+│ | ├── used for defining utilities
+│ ├── View
+│ | ├── Section Screens [Dashboard, analytics, setting, finance] ...
+│ | ├── index.tsx
+│ ├── app.tsx
+│ ├── index.tsx
+│ ├── input.css
+│ ├── store.tsx //redux store
+│ ├── style.css #Main css file
+├── public
+│ ├── index.html
+├── dist (or build)
+├── node_modules
+├── package.json
+│ ├── tailwind.config.js //for setting theme colors
+└── .gitignore
+```
+## View Screens
+These are the Screens that are used to Create Website all exported from `src/view/index.tsx`
+| Screen Name(View)      | props | description |
+| ------------------| ----- |----------------------------|
+| `Analytics` | `none`| Analtical Screen        |
+| `Dashboard` | `none`| For Structuring the website |
+| `Finance` | `none`| Finance Screen |
+| `Login` | `none`| User Login Portal |
+| `Signup` | `none`| User Signup page |
+| `Setting` | `none`| Setting Page |
+ 
+##  Context
+These are the that is use for making context api that is usefull in whole website  `src/context/...tsx`
 
-In the project directory, you can run:
+| Context  | Function | description |
+| ------------------| ----- |----------------------------|
+| `AuthContext` | `authUser, setAuthUser, isLoggedIn, setisLoggedIn `| For Authenticating the User and passing value using Auth Context     |
+| `ThemeContext` | `notify, loading, setLoading, tempLoader`| Used For showing toast/Loader in root |
+## Components
+These are the Custumized to use it repeatively.
+| Component Name | props | description / Used in |
+| ----------- | -------| ------------------------         |
+| `CustomTable` | `columns | data| rowCss| headCss| rowStyle| colStyle` | Data Table for analytics page |
+| `Header` | `none` | Header its added in dashboard |
+| `InvoiceHistory` | `none` | Used in Finance Page|
+| `InvoiceTable` | `none` | Recent Invoice in Analytics |
+| `SalesGraph` | `none` | Sales [Line] Graph used in Analytics |
+| `Sidebar` | `hider` | Global Component |
+| `StatCard` | `prop[type/index.tsx]` | Production Card for analytics |
+| `StaticsGraph` | `none` | Doughnut Graph for analytics |
+| `Wallet` | `none` | Wallet for Finance Page |
+| `notify` | `title|message|success` | Used for showing toast Message |
+| `Loader` | `loading` | Used for showing Loader on full screen. |
 
-### `yarn start`
+  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ScreenShots
+Saved in ProjectDemo Folder
+` Images is availble in ProjectDemo folder`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technology Used / library
 
-### `yarn test`
+**`TypeScript:`**  `language used to build the webapplication`
+**`JavaScript:`**  `Code can be changed in least effort `
+**`React:`**  `library used in application`
+**`TailwindCss:`**  `css used to design UI/UX `
+**`react-form-hook:`**  `libary used to build Appointment Form`
+and many more.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Setup / Installation**
+##### Clone the repo
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git  clone  ...
+cd  proj
+```
+##### Install the packages
+```bash
+yarn  install
+```
+or
+```bash
+npm  install
+```
+##### Start the Application
+```bash
+yarn  start
+```
+or
+```bash
+npm  start
+```

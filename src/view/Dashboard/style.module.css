@@ -1,0 +1,13 @@
+.siderbar {
+    z-index: 4;
+}
+@media (max-width: 640px) { 
+    .sidebar{
+        z-index:10;
+        position: absolute;
+        width: 100%;
+    }
+    .hidesb{
+        display: none;
+    }
+}

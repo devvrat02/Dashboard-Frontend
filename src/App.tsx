@@ -1,15 +1,18 @@
 import './App.css';
 import { AuthProvider } from './Context/AuthContext';//Authentication
-import TodoProvider from './Context/TodoContext';//todo
-import { Dashboard } from './components';
-
+import { ThemeProvider } from './Context/ThemeContext';
+import Router from './Router';
+import {store} from './store';
+import { Provider } from "react-redux"
 function App() {
   return (
-    <AuthProvider>
-      <TodoProvider>
-        <Dashboard/>
-      </TodoProvider>
-    </AuthProvider>
+      <AuthProvider>
+          <ThemeProvider>
+            <Provider store={store}>
+                        <Router/>
+                  </Provider>
+          </ThemeProvider>
+       </AuthProvider>
   );
 }
 

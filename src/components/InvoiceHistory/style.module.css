@@ -1,0 +1,25 @@
+ 
+.cust table {
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    
+  }
+  
+.cust table td {
+    background: #fff;
+  }
+
+.table-container { 
+    width: 100% !important;
+    overflow-x: scroll; 
+}
+  
+.cust table td:first-of-type{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+  
+.cust table td:last-of-type{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
