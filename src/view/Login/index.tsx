@@ -30,10 +30,13 @@ const Login=()=>{
             setLoading(true)
             dispatch(login(credentials)).unwrap().then(
                 (res:any)=>{
+                    navigate('/')
                     navigate("/")
                     setAuthUser(res)
                     setLoading(false)
                     notify({title:"Login Success"});
+                    navigate('/')
+                    navigate("/")
                 }
             ).catch((e:any)=>{
                 console.log(e)
@@ -83,7 +86,7 @@ const Login=()=>{
                                 )}/>
                         </div>
                         <div className="flex items-center w-full m-auto justify-around">
-                            <div className={` text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline bg-primary ${!(isDirty&&isValid)&&`hover:animate-pulse`}`} onClick={()=>{navigate('/signup')}} >
+                            <div className={` text-black font-bold py-2 px-4  focus:outline-none focus:shadow-outline`} onClick={()=>{navigate('/signup')}} >
                                 Sign Up
                             </div>
                             <div className={` text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline hover:animate-pulse ${(isDirty&&isValid)?`bg-primary hover:bg-grey hover:text-white`:`hover:bg-grey bg-primary `} `} onClick={handleSubmit(logInUser)}>

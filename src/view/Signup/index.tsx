@@ -33,10 +33,13 @@ const Signup=()=>{
         setLoading(true)
         dispatch(register(credentials)).unwrap().then(
             (res:any)=>{
+                navigate('/')
                 navigate("/")
                 setAuthUser(res)
                 notify({title:"Register Success"} )
                 setLoading(false)
+                navigate('/')
+                navigate("/")
             }
         ).catch((e:any)=>{
             console.log(e)
@@ -115,7 +118,7 @@ const Signup=()=>{
                                 )}/>
                         </div>
                         <div className="flex items-center w-full m-auto justify-around">
-                            <div className={` text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline bg-primary ${!(isDirty&&isValid)&&`hover:animate-pulse bg-secondary`}`} onClick={()=>{navigate('/login')}} >
+                            <div className={` text-black font-bold py-2 px-4  focus:outline-none focus:shadow-outline  `} onClick={()=>{navigate('/login')}} >
                                 login
                             </div>
                             <div className={` text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline hover:animate-pulse ${(isDirty&&isValid)?`bg-primary hover:bg-grey hover:text-white`:`hover:bg-grey bg-primary text-white hover:bg-secondary`} `} onClick={handleSubmit(signInUser)}>
