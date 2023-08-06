@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {   API_LOGIN, API_LOGOUT, API_REGISTER ,API_AUTH} from "../api/auth.service";
+import {   API_LOGIN, API_REGISTER ,API_AUTH} from "../api/auth.service";
 import parseJwt from "../utils/authUtils";
 // import Cookies from "js-cookie";
 import axiosInstance from "../api/axios.instance";
@@ -21,7 +21,7 @@ export const logout = createAsyncThunk(
   "auth/logout",
   async (_, thunkAPI) => {
     try {
-      const data = await API_LOGOUT();
+      const data = await localStorage.getItem('dash-token');
       return data;
     } catch (err:any) {
       return thunkAPI.rejectWithValue(err.response.data)

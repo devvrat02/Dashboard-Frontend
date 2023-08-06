@@ -1,10 +1,11 @@
 import { useForm,Controller} from "react-hook-form"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { register } from "../../reducers/authSlice";
+import { authentication, register } from "../../reducers/authSlice";
 import { AppDispatch } from "../../store";
 import { useAuth } from "../../Context/AuthContext";
 import { useTheme } from "../../Context/ThemeContext";
+import {useEffect} from 'react'
 // Signup Screen
 const Signup=()=>{
     const {setAuthUser}:any=useAuth()
@@ -42,6 +43,22 @@ const Signup=()=>{
             notify({title:"Register Error",message:`Reason: ${e}`,success:false} )
         })
     }
+
+    const {isLogedIn}=useSelector((state:any)=>state.auth)
+    useEffect(() => {
+        let token=localStorage.getItem('dash-token')
+        if(token){
+            dispatch(authentication())
+        }
+        // eslint-disable-next-line
+    },[])
+    useEffect(() => {
+        if (isLogedIn) {
+            navigate("/");
+        }
+        // eslint-disable-next-line
+    }, [])
+    
     return ( 
         <div className="flex w-full bg-primary h-screen">
             <div className="sm:w-10/12 xl:w-5/6 m-auto xl:my-48 lg:my-36 ">

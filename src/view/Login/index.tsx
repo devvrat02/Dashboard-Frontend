@@ -1,11 +1,11 @@
 import { useForm,Controller} from "react-hook-form"
-import { useDispatch } from "react-redux";
-import { useNavigate ,Navigate} from "react-router-dom";
-import { login } from "../../reducers/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { authentication, login } from "../../reducers/authSlice";
 import { AppDispatch } from "../../store";
 import { useAuth } from "../../Context/AuthContext";
 import { useTheme } from "../../Context/ThemeContext";
-
+import {useEffect} from 'react'
 // Login Screen
 const Login=()=>{
     const {setAuthUser}:any=useAuth();
@@ -13,15 +13,31 @@ const Login=()=>{
     const defaultValues = {
         Email: '',
         Password: '',
-      }
+    }
     // form handeling
     const {
         control,
         handleSubmit,
         formState: {isDirty,isValid },
-      } = useForm({defaultValues})
+    } = useForm({defaultValues})
     const navigate = useNavigate();
     const dispatch=useDispatch<AppDispatch>()
+    const {isLogedIn}=useSelector((state:any)=>state.auth)
+    useEffect(() => {
+        let token=localStorage.getItem('dash-token')
+        if(token){
+            dispatch(authentication())
+        }
+        // eslint-disable-next-line
+    },[])
+    useEffect(() => {
+        if (isLogedIn) {
+            navigate("/");
+        }
+        // eslint-disable-next-line
+    }, [])
+    
+
     const logInUser=(e:any)=>{
         let credentials:any={
              email:e.Email, 
@@ -32,7 +48,7 @@ const Login=()=>{
                     setAuthUser(res)
                     setLoading(false)
                     notify({title:"Login Success"});
-                    return navigate("/")}).catch((e:any)=>{
+                    return navigate(`/`)}).catch((e:any)=>{
                 console.log(e)
                 setLoading(false)
                 notify({title:"Login Error",message:`Reason: ${e}`,success:false} )

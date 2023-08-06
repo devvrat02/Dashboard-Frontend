@@ -30,7 +30,7 @@ const API_AUTH = async () => {
 
 const API_LOGOUT = async () => {
     try {
-        const resp = await axiosInstance.get('/user/logout');
+        const resp = await axiosInstance.get('/user/auth');
         return resp.data;
     } catch (err) {
         throw err

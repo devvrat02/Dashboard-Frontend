@@ -105,9 +105,9 @@ function Sidebar({hider=()=>{}}:any) {
     const {setisLoggedIn}:any=useAuth()
     const dispatch = useDispatch<AppDispatch>()
     const userLogout=()=>{
-        dispatch(logout())
-        setisLoggedIn(false)  
-        navigate('/')
+        dispatch(logout()).unwrap().then(()=>{   setisLoggedIn(false)  
+            navigate('/');}
+        )
     }
 
     return ( 
