@@ -4,6 +4,7 @@ import { AppDispatch } from "../../store";
 import { updateUser } from "../../reducers/settingSlice";
 import { useEffect } from "react";
 import { useTheme } from "../../Context/ThemeContext";
+import { authentication } from "../../reducers/authSlice";
 
 function Setting() {
     const {notify,setLoading}:any=useTheme()
@@ -28,6 +29,7 @@ function Setting() {
     dispatch(updateUser(credentials)).unwrap().then(
         (res:any)=>{
             setLoading(false)
+            dispatch(authentication())
             notify({title:"Detail Updated"} )
     }
     ).catch((e:any)=>{
