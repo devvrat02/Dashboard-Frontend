@@ -33,15 +33,10 @@ const Signup=()=>{
         setLoading(true)
         dispatch(register(credentials)).unwrap().then(
             (res:any)=>{
-                navigate('/')
-                navigate("/")
                 setAuthUser(res)
                 notify({title:"Register Success"} )
                 setLoading(false)
-                navigate('/')
-                navigate("/")
-            }
-        ).catch((e:any)=>{
+                return navigate("/");}).catch((e:any)=>{
             console.log(e)
             setLoading(false)
             notify({title:"Register Error",message:`Reason: ${e}`,success:false} )

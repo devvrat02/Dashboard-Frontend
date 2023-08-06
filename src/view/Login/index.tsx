@@ -1,6 +1,6 @@
 import { useForm,Controller} from "react-hook-form"
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Navigate} from "react-router-dom";
 import { login } from "../../reducers/authSlice";
 import { AppDispatch } from "../../store";
 import { useAuth } from "../../Context/AuthContext";
@@ -28,17 +28,11 @@ const Login=()=>{
              password :e.Password
             } 
             setLoading(true)
-            dispatch(login(credentials)).unwrap().then(
-                (res:any)=>{
-                    navigate('/')
-                    navigate("/")
+            dispatch(login(credentials)).unwrap().then((res:any)=>{                    
                     setAuthUser(res)
                     setLoading(false)
                     notify({title:"Login Success"});
-                    navigate('/')
-                    navigate("/")
-                }
-            ).catch((e:any)=>{
+                    return navigate("/")}).catch((e:any)=>{
                 console.log(e)
                 setLoading(false)
                 notify({title:"Login Error",message:`Reason: ${e}`,success:false} )
